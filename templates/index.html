@@ -61,18 +61,17 @@
           </div>
       </div>
 
-
+        {% for weekday in content%}
         <div class="row">
             <div class="col-md-2">
-          </div>
-
+            </div>
             <div class="col-md-2">
-                {% for weekday in content%}
+
 
                     {%  for key, value in weekday.items() %}
                         <h2>{{ key }}</h2>
-                        </div>
-                        <div class="col-md-6">
+             </div>
+             <div class="col-md-6">
 
                         {% for show in value %}
 		                    <h3>{{ show.name }} {% if show.live == "live" %}<span class="label label-success pull-right">Erstausstrahlung</span>{% endif %}</h3>
@@ -84,11 +83,11 @@
                             <hr>
                         {% endfor %}
                     {% endfor %}
-                {% endfor %}
-          </div>
+                </div>
            <div class="col-md-2">
           </div>
-      </div>
+        </div>
+        {% endfor %}
 
     </div> <!--/.container -->
 
