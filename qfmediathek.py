@@ -81,7 +81,8 @@ class QFMediathek(object):
                 day[weekday].append(element)
             else:
                 self.newdata.append(day)
-                day = {element['weekday'] : []}
+                weekday = element['weekday']
+                day = { weekday : []}
                 day[weekday].append(element)
         #append the last day
         self.newdata.append(day)
