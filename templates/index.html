@@ -78,7 +78,7 @@
                             <h4>{{ show.weekday }}, {{ show.date }} {{ show.time }}</h4>
                                 <p>{{ show.description }} (Länge: {{ show.length }} Minuten) </p>
                                 <p class="audiojs">
-                                    <audio src='/recordings/{{show.filename}}' preload="auto"/>
+                                    <audio src='/recordings/{{show.filename}}' preload="none"/>
 		                        </p>
                             <hr>
                         {% endfor %}
