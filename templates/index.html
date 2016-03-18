@@ -13,19 +13,10 @@
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/mediaelement/mediaelementplayer.css" />
 
     <!-- The nice and shiny audio player-->
-    <script src="/audiojs/audio.min.js"></script>
-
-      <style>
-
-          .audiojs * {
-                        -webkit-box-sizing: content-box !important;
-                        -moz-box-sizing: content-box !important;
-                        box-sizing: content-box !important;
-          }
-
-      </style>
+    <script src="/mediaelement/mediaelement-and-player.min.js"></script>
 
   </head>
 
@@ -77,9 +68,9 @@
 		                    <h3>{{ show.name }} {% if show.live == "live" %}<span class="label label-success pull-right">Erstausstrahlung</span>{% endif %}</h3>
                             <h4>{{ show.weekday }}, {{ show.date }} {{ show.time }}</h4>
                                 <p>{{ show.description }} (Länge: {{ show.length }} Minuten) </p>
-                                <p class="audiojs">
-                                    <audio src='/recordings/{{show.filename}}' preload="none"/>
-		                        </p>
+                                <p>
+                                    <audio src='/recordings/{{show.filename}}' />
+		                </p>
                             <hr>
                         {% endfor %}
                     {% endfor %}
