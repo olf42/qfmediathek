@@ -15,7 +15,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/mediaelement/mediaelementplayer.css" />
 
-    <!-- The nice and shiny audio player-->
+    <script src="/mediaelement/jquery.js"></script>
     <script src="/mediaelement/mediaelement-and-player.min.js"></script>
 
   </head>
@@ -68,9 +68,7 @@
 		                    <h3>{{ show.name }} {% if show.live == "live" %}<span class="label label-success pull-right">Erstausstrahlung</span>{% endif %}</h3>
                             <h4>{{ show.weekday }}, {{ show.date }} {{ show.time }}</h4>
                                 <p>{{ show.description }} (Länge: {{ show.length }} Minuten) </p>
-                                <p>
-                                    <audio src='/recordings/{{show.filename}}' />
-		                </p>
+				<audio src='/recordings/{{show.filename}}' type="audio/mp3" controls="controls"></audio>
                             <hr>
                         {% endfor %}
                     {% endfor %}
@@ -82,17 +80,14 @@
 
     </div> <!--/.container -->
 
+	<script>
+	$('audio,video').mediaelementplayer();
+	</script>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script>
-      audiojs.events.ready(function() {
-      var as = audiojs.createAll();
-       });
-    </script>
-
+        <script src="/js/bootstrap.min.js"></script>
   </body>
 </html>
