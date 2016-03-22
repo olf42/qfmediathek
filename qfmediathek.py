@@ -85,12 +85,10 @@ class QFMediathek(object):
                 weekday = element['weekday']
                 day = { weekday : []}
                 day[weekday].append(element)
-                if daycount >= 6
+                if daycount >= 6:
                     break
                 else:
                     daycount+=1
-        #append the last day
-        self.newdata.append(day)
 
 
     @cherrypy.expose
