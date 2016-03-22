@@ -68,7 +68,7 @@
 		                    <h3>{{ show.name }} {% if show.live == "live" %}<span class="label label-success pull-right">Erstausstrahlung</span>{% endif %}</h3>
                             <h4>{{ show.weekday }}, {{ show.date }} {{ show.time }}</h4>
                                 <p>{{ show.description }} (Länge: {{ show.length }} Minuten) </p>
-				<audio src='/recordings/{{show.filename}}' type="audio/mp3" controls="controls"></audio>
+				<audio src='/recordings/{{show.filename}}' type="audio/mp3" controls="controls" preload="none"></audio>
                             <hr>
                         {% endfor %}
                     {% endfor %}
