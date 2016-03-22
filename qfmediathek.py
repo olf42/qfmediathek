@@ -74,6 +74,7 @@ class QFMediathek(object):
         # set initial weekday
         weekday = self.data[0]['weekday']
         day = { weekday : []}
+        daycount = 0
 
         # sort by weekday
         for element in self.data:
@@ -84,6 +85,10 @@ class QFMediathek(object):
                 weekday = element['weekday']
                 day = { weekday : []}
                 day[weekday].append(element)
+                if daycount >= 6
+                    break
+                else:
+                    daycount+=1
         #append the last day
         self.newdata.append(day)
 
