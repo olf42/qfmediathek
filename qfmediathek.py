@@ -71,6 +71,11 @@ class QFMediathek(object):
 
                 self.data.append(jsondata)
 
+        # remove first entry, if this show is still running
+        end = int(int(self.data[0]['starthour'])%24) + int(int(self.data[0]['length'])/60)
+        if not datetime.now().hour > end:
+            self.data.pop(0)
+
         # set initial weekday
         weekday = self.data[0]['weekday']
         day = { weekday : []}
