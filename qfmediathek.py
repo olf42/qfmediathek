@@ -11,7 +11,7 @@ from jinja2 import Environment, PackageLoader
 import locale
 
 # The directory where recordings (mp3) and datafiles (json) are recorded to by qfrecord
-RECORD_DIR = "../qfrecord/recordings"
+RECORD_DIR = "/home/qfrecord/qfrecord/recordings"
 
 class QFMediathek(object):
 
